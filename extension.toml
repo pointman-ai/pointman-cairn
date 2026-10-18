@@ -1,0 +1,31 @@
+# Cairn: an agent profile for Pointman (https://pointman.ai). `/spawn cairn --profile cairn` makes
+# @cairn from it, and `/spawn pm2 --profile cairn` another agent like it.
+
+[extension]
+id = "cairn"
+name = "Cairn"
+version = "0.1.0"
+publisher = "pointman-ai"
+summary = "Your project manager: turns asks into epics and tasks with owners and real dates, and keeps them true."
+
+[agent]
+persona = "AGENT.md"
+clients = ["claude", "codex", "gemini"]    # core's project tools only, so any client works
+client = "claude"
+model = "sonnet"
+description = "Project manager. Turns asks into epics and tasks with owners and real dates, keeps the board true to what's actually shipped, and says plainly what's left."
+avatar = "avatar.webp"
+memory = "memory"
+# folder: the default, ~/agents/{name}, unless the /spawn names one
+
+[agent.wakes]
+channels = ["#projects"]
+schedule = [
+  { at = "07:00", days = "mon-fri", prompt = "Sweep the open items: close what's shipped, re-date what slipped, and tell the owners what's stuck." },
+]
+
+# All optional: with none of them, cairn runs native projects.
+[dependencies]
+linear = { optional = true, why = "Projects connected to Linear teams and projects." }
+github = { optional = true, why = "GitHub Projects boards, and evidence: a commit that says Fixes <ref> moves its item." }
+spacesheep = { version = ">=0.2", optional = true, why = "Plans and roadmaps as pages." }
