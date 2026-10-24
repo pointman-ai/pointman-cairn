@@ -4,7 +4,8 @@
 [extension]
 id = "cairn"
 name = "Cairn"
-version = "0.1.0"
+version = "0.2.0"
+node = ">=0.2.0"
 publisher = "pointman-ai"
 summary = "Your project manager: turns asks into epics and tasks with owners and real dates, and keeps them true."
 
