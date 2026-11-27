@@ -4,15 +4,15 @@
 [extension]
 id = "cairn"
 name = "Cairn"
-version = "0.2.0"
-node = ">=0.2.0"
+version = "0.3.0"
+node = ">=0.6,<1"
 publisher = "pointman-ai"
 summary = "Your project manager: turns asks into epics and tasks with owners and real dates, and keeps them true."
 
 [agent]
 persona = "AGENT.md"
-clients = ["claude", "codex", "gemini"]    # core's project tools only, so any client works
-client = "claude"
+harnesses = ["claude", "codex", "gemini"]    # core's project tools only, so any harness works
+harness = "claude"
 model = "sonnet"
 description = "Project manager. Turns asks into epics and tasks with owners and real dates, keeps the board true to what's actually shipped, and says plainly what's left."
 avatar = "avatar.webp"
