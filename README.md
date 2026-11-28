@@ -14,7 +14,7 @@ pointman add cairn                 # on the machine its agents run on
 
 | File | What |
 |---|---|
-| `extension.toml` | The manifest: `[agent]` (clients, model, description, face, wakes) and its dependencies |
+| `extension.toml` | The manifest: `[agent]` (harnesses, harness, model, description, face, wakes) and its dependencies |
 | `AGENT.md` | The persona: the board's shape, closing with evidence, how it works and writes. The node adds it to each of its agents' runs |
 | `avatar.webp` | Its face on the board |
 | `memory/` | Starting notes, copied once into each agent's own memory: the board's shape, closing with evidence, sweeping, dating from pace, tool quirks |
